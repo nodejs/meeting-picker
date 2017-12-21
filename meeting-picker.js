@@ -11,7 +11,21 @@ const GOOGLE_DOC_URL = process.env.GOOGLE_DOC_URL;
 if (GOOGLE_DOC_URL) {
   const request = require('request');
   request({uri: GOOGLE_DOC_URL}, (err, response) => {
-    analyze(String(response.body));
+    const body = response.body;
+    const lines = body.split('\n');
+    const header = lines.findIndex(s => s.startsWith('TSC'));
+    const people = [];
+    for (let i = header + 1; i < lines.length; i++) {
+      const line = lines[i];
+      if (line.charAt(0) === '\t') break;
+      const data = line.split('\t');
+      people.push({
+        name: data[0],
+        scores: data.slice(1, 25),
+        timezone: data[25]
+      });
+    }
+    analyze(people.map(person => person.scores.join('\t')).join('\n'));
   });
 } else {
   const raw = require('fs').readFileSync(__dirname + '/data.tsv', 'utf-8');
