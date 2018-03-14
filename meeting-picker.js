@@ -52,15 +52,14 @@ function analyze (raw) {
     return scores;
   });
 
-  // List of indexes to ignore for times that do not work (score of 0 or 1) for
-  // half or more of attendees. This avoids the selection of equitably terrible
-  // times.
+  // Ignore times that do not work (score of 0 or 1) for more than 60% of
+  // attendees. This avoids the selection of equitably terrible times.
   const indexesToIgnore = [];
   for (let i=0; i<24; i++) {
     const count = data.filter((individualTimePrefs) => {
       return individualTimePrefs[i] > 1;
     }).length;
-    if (count <= data.length / 2) {
+    if (count <= data.length * 0.6) {
       indexesToIgnore.push(i);
     }
   }
