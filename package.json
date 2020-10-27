@@ -4,7 +4,7 @@
   "description": "",
   "main": "meeting-picker.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard"
   },
   "author": "Rich Trott",
   "license": "MIT",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/nodejs/meeting-picker/issues"
   },
-  "homepage": "https://github.com/nodejs/meeting-picker#readme"
+  "homepage": "https://github.com/nodejs/meeting-picker#readme",
+  "devDependencies": {
+    "standard": "^15.0.0"
+  }
 }
