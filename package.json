@@ -11,5 +11,13 @@
   "dependencies": {
     "compute-stdev": "^1.0.0",
     "request": "^2.88.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodejs/meeting-picker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nodejs/meeting-picker/issues"
+  },
+  "homepage": "https://github.com/nodejs/meeting-picker#readme"
 }
