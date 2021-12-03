@@ -86,7 +86,7 @@ function analyze (raw) {
     return arr.reduce((a, b) => a + b, 0)
   };
 
-  var allResults = []
+  const allResults = []
 
   generateCombinations(0, [])
 
