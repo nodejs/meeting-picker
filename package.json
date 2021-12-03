@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/nodejs/meeting-picker#readme",
   "devDependencies": {
-    "standard": "^15.0.0"
+    "standard": "^16.0.4"
   }
 }
