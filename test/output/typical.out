@@ -1,0 +1,5 @@
+{ times: [ 2, 5, 10 ], standardDeviation: 0.488392041002191 }
+{ times: [ 2, 6, 10 ], standardDeviation: 0.5063877678504601 }
+{ times: [ 2, 4, 10 ], standardDeviation: 0.5226563334134035 }
+{ times: [ 4, 5, 10 ], standardDeviation: 0.772634639214607 }
+{ times: [ 4, 6, 10 ], standardDeviation: 0.805754969844165 }
