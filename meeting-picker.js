@@ -1,41 +1,13 @@
 'use strict'
 
-const path = require('path')
-
 const stdev = require('compute-stdev')
 
-const LENGTH = +process.argv[2] || 3
-const NUM_RESULTS = +process.argv[3] || 5
-const MINIMUM_SCORE = +process.argv[4] || 0
+const LENGTH = 3
+const NUM_RESULTS = 5
 
-// const GOOGLE_DOC_URL = process.env.GOOGLE_DOC_URL
-//
-// if (GOOGLE_DOC_URL) {
-//   const request = require('request')
-//   request({ uri: GOOGLE_DOC_URL }, (err, response) => {
-//     if (err) {
-//       throw err
-//     }
-//     const body = response.body
-//     const lines = body.split('\n')
-//     const header = lines.findIndex(s => s.startsWith('TSC'))
-//     const people = []
-//     for (let i = header + 1; i < lines.length; i++) {
-//       const line = lines[i]
-//       if (line.charAt(0) === '\t') break
-//       const data = line.split('\t')
-//       people.push({
-//         name: data[0],
-//         scores: data.slice(1, 25),
-//         timezone: data[25]
-//       })
-//     }
-//     analyze(people.map(person => person.scores.join('\t')).join('\n'))
-//   })
-// } else {
-const raw = require('fs').readFileSync(path.join(__dirname, '/data.tsv'), 'utf-8')
+const dataFile = process.argv[2]
+const raw = require('fs').readFileSync(dataFile, 'utf-8')
 analyze(raw)
-// }
 
 function analyze (raw) {
   function split (string, delim) {
@@ -72,6 +44,7 @@ function analyze (raw) {
       indexesToIgnore.push(i)
     }
   }
+
   let START = 0
   while (indexesToIgnore.includes(START)) {
     START++
@@ -107,11 +80,6 @@ function analyze (raw) {
       const scores = data.map(function (_, i) {
         return sum(rawScores.map((row) => { return row[i] }))
       })
-
-      // Bail if this fails the minimum-total-score-for-all-inidividuals test
-      if (scores.some((val) => val < MINIMUM_SCORE)) {
-        return
-      }
 
       // Calculate the standard deviation of the total scores
       const standardDeviation = stdev(scores)

@@ -4,7 +4,7 @@
   "description": "",
   "main": "meeting-picker.js",
   "scripts": {
-    "test": "standard"
+    "test": "standard && c8 --100 node test/test.js"
   },
   "author": "Rich Trott",
   "license": "MIT",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/nodejs/meeting-picker#readme",
   "devDependencies": {
+    "c8": "^7.11.0",
     "standard": "^16.0.4"
   },
   "engines": {
