@@ -3,6 +3,9 @@
   "version": "2.0.0",
   "description": "",
   "main": "meeting-picker.js",
+  "bin": {
+    "meeting-picker": "meeting-picker.js"
+  },
   "scripts": {
     "test": "standard && c8 --100 node test/test.js"
   },
