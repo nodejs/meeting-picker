@@ -6,6 +6,7 @@
   "bin": {
     "meeting-picker": "meeting-picker.js"
   },
+  "type": "module",
   "scripts": {
     "test": "standard && c8 --100 node test/test.js"
   },

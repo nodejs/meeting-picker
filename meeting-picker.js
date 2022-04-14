@@ -1,13 +1,12 @@
 #!/usr/bin/env node
-'use strict'
-
-const stdev = require('compute-stdev')
+import fs from 'node:fs'
+import stdev from 'compute-stdev'
 
 const LENGTH = 3
 const NUM_RESULTS = 5
 
 const dataFile = process.argv[2]
-const raw = require('fs').readFileSync(dataFile, 'utf-8')
+const raw = fs.readFileSync(dataFile, 'utf-8')
 analyze(raw)
 
 function analyze (raw) {
