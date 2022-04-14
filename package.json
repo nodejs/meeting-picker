@@ -7,6 +7,12 @@
     "meeting-picker": "meeting-picker.js"
   },
   "type": "module",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "meeting-picker.js",
+    "package.json"
+  ],
   "scripts": {
     "test": "standard && c8 --100 node test/test.js"
   },
