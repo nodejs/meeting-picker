@@ -14,13 +14,10 @@
     "package.json"
   ],
   "scripts": {
-    "test": "standard && c8 --100 node test/test.js"
+    "test": "ts-standard -p tsconfig.json && tsc && c8 --100 node test/test.js"
   },
   "author": "Rich Trott",
   "license": "MIT",
-  "dependencies": {
-    "compute-stdev": "^1.0.0"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nodejs/meeting-picker.git"
@@ -29,9 +26,17 @@
     "url": "https://github.com/nodejs/meeting-picker/issues"
   },
   "homepage": "https://github.com/nodejs/meeting-picker#readme",
+  "ts-standard": {
+    "ignore": [
+      "**/*.js",
+      "**/*.d.ts"
+    ]
+  },
   "devDependencies": {
+    "@types/node": "^17.0.23",
     "c8": "^7.11.0",
-    "standard": "^16.0.4"
+    "ts-standard": "^11.0.0",
+    "typescript": "^4.7.0-beta"
   },
   "engines": {
     "node": ">=12"
