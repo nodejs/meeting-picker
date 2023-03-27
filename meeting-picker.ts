@@ -90,7 +90,7 @@ function analyze (raw: string): void {
 
       allResults.unshift({
         times: rv,
-        standardDeviation: standardDeviation // lower == more equitable
+        standardDeviation // lower == more equitable
         // scores: scores
       })
       return
