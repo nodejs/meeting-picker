@@ -70,7 +70,7 @@ function analyze(raw) {
             const standardDeviation = stdev(scores);
             allResults.unshift({
                 times: rv,
-                standardDeviation: standardDeviation // lower == more equitable
+                standardDeviation // lower == more equitable
                 // scores: scores
             });
             return;
