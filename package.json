@@ -33,7 +33,7 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "20.1",
+    "@types/node": "20.2",
     "c8": "7.13",
     "ts-standard": "^12.0.2",
     "typescript": "^5.0.2"
